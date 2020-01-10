@@ -7,6 +7,9 @@
         <app-appareil></app-appareil>
         <app-appareil></app-appareil>
       </ul>
+      <button class="btn btn-success" [disabled]="!isAuth">Tout allumer</button>
+      &nbsp;
+      <button class="btn btn-danger" [disabled]="!isAuth">Tout éteindre</button>
     </div>
   </div>
 </div>

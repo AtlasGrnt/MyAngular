@@ -6,7 +6,7 @@ import { AppareilService } from './services/appareil.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnIinit {
+export class AppComponent implements OnInit {
   isAuth = false;
 
   lastUpdate = new Promise(
@@ -33,10 +33,10 @@ export class AppComponent implements OnIinit {
     this.appareils = this.appareilService.appareils
   }
   onAllumer(){
-    console.log('Allumage en cours');
+    this.appareilService.switchOnAll();
   }
   onEteindre(){
-    console.log('Extinction en cours');
+    this.appareilService.switchOffAll();
   }
 }
 

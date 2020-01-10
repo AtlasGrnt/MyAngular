@@ -10,15 +10,18 @@ export class AppComponent {
   appareils = [
     {
       name: 'Ordinateur',
-      status: 'allumé'
+      status: 'allumé',
+      position: 'Bureau'
     },
     {
       name: 'Télévision',
-      status: 'éteint'
+      status: 'éteint',
+      position: 'Chambre'
     },
     {
       name: 'Lampe',
-      status: 'éteint'
+      status: 'éteint',
+      position: 'Salon'
     }
   ];
   constructor(){

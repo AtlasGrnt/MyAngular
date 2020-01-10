@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Mes Appareils</h2>
-      <p>Mis à jour : {{ lastUpdate | date : 'medium'}}</p>
+      <p>Date : {{ lastUpdate | async | date : 'medium'}}</p>
       <ul class="list-group">
         <app-appareil *ngFor="let appareil of appareils" [appareilName]="appareil.name" [appareilStatus]="appareil.status" [appareilPosition]="appareil.position"></app-appareil>
       </ul>

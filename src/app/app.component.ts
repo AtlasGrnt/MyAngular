@@ -14,5 +14,11 @@ export class AppComponent {
       }, 4000
     );
   }
+  onAllumer(){
+    console.log('Allumage en cours');
+  }
+  onEteindre(){
+    console.log('Extinction en cours');
+  }
 }
 

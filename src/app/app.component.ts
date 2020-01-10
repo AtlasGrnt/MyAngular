@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppareilService } from './services/appareil.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnIinit {
   isAuth = false;
 
   lastUpdate = new Promise(
@@ -19,29 +20,17 @@ export class AppComponent {
     }
   )
 
-  appareils = [
-    {
-      name: 'Ordinateur',
-      status: 'allumé',
-      position: 'Bureau'
-    },
-    {
-      name: 'Télévision',
-      status: 'éteint',
-      position: 'Chambre'
-    },
-    {
-      name: 'Lampe',
-      status: 'éteint',
-      position: 'Salon'
-    }
-  ];
-  constructor(){
+  appareils: any[];
+
+  constructor(private appareilService: AppareilService){
     setTimeout(
       () => {
         this.isAuth = true
       }, 4000
     );
+  }
+  ngOnInit(){
+    this.appareils = this.appareilService.appareils
   }
   onAllumer(){
     console.log('Allumage en cours');

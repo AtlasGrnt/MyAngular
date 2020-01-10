@@ -2,7 +2,7 @@ export class AppareilService{
     appareils = [
         {
           name: 'Ordinateur',
-          status: 'allumé',
+          status: 'éteint',
           position: 'Bureau'
         },
         {

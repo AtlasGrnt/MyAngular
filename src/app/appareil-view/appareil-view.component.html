@@ -2,7 +2,7 @@
         <h2>Mes Appareils</h2>
         <p>Date : {{ lastUpdate | async | date : 'medium'}}</p>
         <ul class="list-group">
-          <app-appareil *ngFor="let appareil of appareils; let i = index" [indexOfAppareil]="i" [appareilName]="appareil.name" [appareilStatus]="appareil.status" [appareilPosition]="appareil.position"></app-appareil>
+          <app-appareil *ngFor="let appareil of appareils; let i = index" [indexOfAppareil]="i" [appareilName]="appareil.name" [appareilStatus]="appareil.status" [appareilPosition]="appareil.position" [id]="appareil.id"></app-appareil>
         </ul>
         <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
         &nbsp;

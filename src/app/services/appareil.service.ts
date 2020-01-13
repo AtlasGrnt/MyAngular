@@ -1,21 +1,33 @@
 export class AppareilService{
     appareils = [
         {
+          id: 1,
           name: 'Ordinateur',
           status: 'éteint',
           position: 'Bureau'
         },
         {
+          id: 2,
           name: 'Télévision',
           status: 'éteint',
           position: 'Chambre'
         },
         {
+          id: 3,
           name: 'Lampe',
           status: 'éteint',
           position: 'Salon'
         }
       ];
+
+      getAppareilById(id: number){
+          const appareil = this.appareils.find(
+              (appareilObject) => {
+                  return appareilObject.id === id;
+              }
+          );
+          return appareil;
+      }
 
       switchOnAll(){
           for(let appareil of this.appareils) {
